@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guijavasql.paymentController">
+   <center>
+      <TableView fx:id="paymentTable" onMouseClicked="#rowSelected" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="paymentIdCol" minWidth="75.0" prefWidth="75.0" text="Payment Id" />
+          <TableColumn fx:id="amountCol" minWidth="100.0" prefWidth="170.0" text="Amount" />
+            <TableColumn fx:id="methodCol" minWidth="150.0" prefWidth="203.0" text="Payment Method" />
+            <TableColumn fx:id="dateCol" minWidth="100.0" prefWidth="211.0" text="Payment Date" />
+            <TableColumn fx:id="beenPayedCol" minWidth="0.0" prefWidth="220.0" text="Has been paid" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <VBox prefHeight="800.0" prefWidth="305.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="552.0" prefWidth="305.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="245.0" prefWidth="242.0" text="If you want to insert a payment you must do it through the reservation screen" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="28.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="87.0" prefWidth="305.0" spacing="40.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#payButton" prefHeight="70.0" prefWidth="125.0" text="PAY">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="121.0" prefWidth="305.0" spacing="40.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#backButtons" prefHeight="70.0" prefWidth="125.0" text="Back">
+                     <font>
+                        <Font size="28.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

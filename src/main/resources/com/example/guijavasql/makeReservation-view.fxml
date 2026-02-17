@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1401.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guijavasql.makeReservationController">
+   <center>
+      <TableView fx:id="roomTable" onMouseClicked="#rowSelected" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="roomIdCol" prefWidth="75.0" text="Room Id" />
+          <TableColumn fx:id="centerIdCol" prefWidth="75.0" text="Center Id" />
+            <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="roomCapCol" prefWidth="75.0" text="Max Capacity" />
+            <TableColumn fx:id="roomSeatTypeCol" minWidth="6.0" prefWidth="61.0" text="Seat Type" />
+            <TableColumn fx:id="roomEquipCol" prefWidth="75.0" text="Equipment" />
+            <TableColumn fx:id="roomWifiCol" prefWidth="75.0" text="Wifi Availability" />
+            <TableColumn fx:id="roomPPHcol" prefWidth="75.0" text="Price per Hour" />
+            <TableColumn fx:id="roomAvailabilityCol" prefWidth="66.0" text="Availability" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <HBox prefHeight="825.0" prefWidth="746.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="825.0" prefWidth="360.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="272.0" text="Search for room here:" textAlignment="JUSTIFY">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="358.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="146.0" text=" City">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="cityBox" prefHeight="47.0" prefWidth="180.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="79.0" prefWidth="358.0" spacing="25.0">
+                     <children>
+                        <Label prefHeight="66.0" prefWidth="132.0" text="Preferred Center Id (optional)" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="centerIDChoice" prefHeight="47.0" prefWidth="178.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                     <children>
+                        <Label prefHeight="79.0" prefWidth="136.0" text="Number Of Participants" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="perticipantsField" prefHeight="43.0" prefWidth="175.0" promptText="        Optional">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="358.0" spacing="25.0">
+                     <children>
+                        <Label prefHeight="75.0" prefWidth="134.0" text="Starting Date" wrapText="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="startingDatePicker" prefHeight="49.0" prefWidth="177.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="358.0" spacing="25.0">
+                     <children>
+                        <Label prefHeight="79.0" prefWidth="133.0" text="Starting Time" wrapText="true">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="startingTimeChoice" prefHeight="47.0" prefWidth="177.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="358.0" spacing="25.0">
+                     <children>
+                        <Label prefHeight="75.0" prefWidth="133.0" text="Ending Date" wrapText="true">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="finishingDatePicker" prefHeight="49.0" prefWidth="176.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="358.0" spacing="25.0">
+                     <children>
+                        <Label prefHeight="79.0" prefWidth="133.0" text="Ending Time" wrapText="true">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="finifhingTimeChoice" prefHeight="47.0" prefWidth="176.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                     <children>
+                        <Label prefHeight="79.0" prefWidth="133.0" text="Preference in Equipment" wrapText="true">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="equipmentField" prefHeight="49.0" prefWidth="180.0" promptText="        Optional">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                     <children>
+                        <CheckBox fx:id="invoiceBox" mnemonicParsing="false" prefHeight="58.0" prefWidth="141.0" text="Invoice">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="103.0" prefWidth="360.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#searchData" prefHeight="61.0" prefWidth="141.0" text="Search">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#backButtons" prefHeight="61.0" prefWidth="141.0" text="Back">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="825.0" prefWidth="5.0">
+               <children>
+                  <Line endX="-99.70710754394531" endY="828.2929077148438" startX="-100.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="825.0" prefWidth="371.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="272.0" text="Reserve a room here" textAlignment="JUSTIFY">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="358.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="146.0" text="Customer Id">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="customerIDChoice" disable="true" prefHeight="47.0" prefWidth="180.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="371.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="77.0" prefWidth="146.0" text="Payment Mehod" wrapText="true">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="paymentMethodChoice" disable="true" prefHeight="47.0" prefWidth="179.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="371.0" spacing="25.0">
+                     <children>
+                        <CheckBox fx:id="payNowBox" disable="true" mnemonicParsing="false" prefHeight="58.0" prefWidth="141.0" text="Pay Now">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="488.0" prefWidth="371.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#makeReservation" prefHeight="61.0" prefWidth="241.0" text="Make Reservation" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </right>
+</BorderPane>

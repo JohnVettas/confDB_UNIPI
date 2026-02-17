@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/22.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guijavasql.deleteController">
+   <center>
+      <TableView fx:id="reservationTable" onMouseClicked="#rowSelected" prefHeight="800.0" prefWidth="895.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="resIdCol" minWidth="30.0" prefWidth="92.0" text="Reservation Id" />
+          <TableColumn fx:id="cityCol" minWidth="30.0" prefWidth="59.0" text="City" />
+            <TableColumn fx:id="prefCentCol" minWidth="30.0" prefWidth="113.0" text="Prefered Ceter ID" />
+            <TableColumn fx:id="StartDateCol" minWidth="30.0" prefWidth="94.0" text="Date and Starting time" />
+            <TableColumn fx:id="endDateCol" minWidth="30.0" prefWidth="100.0" text="Date and Ending Time" />
+            <TableColumn fx:id="perticipatorsCol" minWidth="30.0" prefWidth="108.0" text="Number of participants" />
+            <TableColumn fx:id="equipmentCol" minWidth="30.0" prefWidth="102.0" text="Prefrence in equipment" />
+            <TableColumn fx:id="invoicecol" minWidth="30.0" prefWidth="96.0" text="Has invoice" />
+            <TableColumn fx:id="customerIdCol" minWidth="30.0" prefWidth="88.0" text="Customer Id" />
+            <TableColumn fx:id="roomIdCol" minWidth="30.0" prefWidth="89.0" text="Confrence Room Id" />
+            <TableColumn fx:id="paymentIdCol" minWidth="30.0" prefWidth="141.0" text="Payment Id" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <VBox prefHeight="800.0" prefWidth="305.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="161.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="73.0" prefWidth="305.0" spacing="10.0" />
+            <HBox prefHeight="56.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="305.0" spacing="10.0" />
+            <HBox prefHeight="56.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER" prefHeight="59.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="CENTER" prefHeight="59.0" prefWidth="305.0" spacing="10.0" />
+            <HBox alignment="BOTTOM_CENTER" minHeight="10.0" prefHeight="62.0" prefWidth="305.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" minHeight="10.0" prefHeight="62.0" prefWidth="305.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#deleteRow" prefHeight="50.0" prefWidth="120.0" text="Delete" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#backButtons" prefHeight="51.0" prefWidth="130.0" text="Back">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
