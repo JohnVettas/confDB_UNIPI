@@ -1,3 +1,1 @@
-TO RUN PROGRAM YOU FIRST NEED TO SET UP THE DATA BASE WITH THE CODE IN THE MySQLcodeFinal.sql FILE
-
-THE PROGRAM DOESN'T CREATE THE DATABASE ON IT'S OWN 
+To run program you first need to set up the data base with the code in the mysqlcodefinal.sql file
